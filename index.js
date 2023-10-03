@@ -15,6 +15,6 @@ app.on('ready', () => {
   mainWindow.loadURL(path.join(app.getAppPath(), 'index.html'));
 
   ipcMain.on('video:submit', (event, path) => {
-    console.log(p);
+    console.log(path);
   });
 });
