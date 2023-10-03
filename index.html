@@ -14,5 +14,14 @@
         <button type="submit">Get info</button>
       </div>
     </form>
+    <script>
+      const form = document.querySelector('.container');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log('invoked');
+        const file = e.target[0].files[0];
+        console.log(file);
+      });
+    </script>
   </body>
 </html>
