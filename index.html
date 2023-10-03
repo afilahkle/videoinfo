@@ -18,9 +18,7 @@
       const form = document.querySelector('.container');
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        console.log('invoked');
-        const file = e.target[0].files[0];
-        console.log(file);
+        const { path } = e.target[0].files[0];
       });
     </script>
   </body>
