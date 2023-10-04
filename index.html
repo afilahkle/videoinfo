@@ -14,12 +14,21 @@
         <button type="submit">Get info</button>
       </div>
     </form>
+
+    <h1 id="result"></h1>
+
     <script>
       const form = document.querySelector('.container');
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const { path } = e.target[0].files[0];
         window.api.send('video:submit', path);
+      });
+
+      window.api.receive('video:info', (data) => {
+        document.querySelector(
+          '#result'
+        ).innerHTML = `Video Duration is: ${data.duration} Seconds`;
       });
     </script>
   </body>
